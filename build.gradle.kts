@@ -54,7 +54,7 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-val databaseUrl = "jdbc:mysql://localhost:3306/db?serverTimezone=Asia/Tokyo"
+val databaseUrl = "jdbc:mysql://localhost:3307/db?serverTimezone=Asia/Tokyo"
 val mysqlUser = "user"
 val mysqlPassword = "password"
 
