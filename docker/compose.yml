@@ -1,0 +1,30 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mini-loglass-db
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: rootpassword
+      DATABASE_URL: jdbc:mysql://localhost:3306/db?serverTimezone=Asia/Tokyo
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: mini-loglass-phpmyadmin
+    environment:
+      PMA_HOST: mini-loglass-db
+      PMA_PORT: 3306
+    ports:
+      - "2222:80"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data: 
