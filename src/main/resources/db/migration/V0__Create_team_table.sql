@@ -3,4 +3,4 @@ CREATE TABLE team (
     name VARCHAR(255) NOT NULL
 );
 
-INSERT INTO team (name) VALUES ('チームA');
+INSERT INTO team (name) VALUES ('チーム3307');
